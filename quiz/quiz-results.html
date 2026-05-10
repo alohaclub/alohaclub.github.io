@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aloha Intimate Wellness Quiz</title>
+
+
+	<link rel="alternate icon" href="./img/fav.png" sizes="32x32" type="image/png">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" media="print" onload="this.media='all'">
+
+	<link rel="stylesheet" href="./assets/quiz.css?v=1">
+</head>
+
+<body>
+
+	<div id="quiz-app">
+		<div class="progress-bar" id="progress"></div>
+		<div id="sections-container"></div>
+	</div>
+
+	<div id="age-gate">
+		<div class="screen">
+			<h2>Deze quiz is bedoeld voor volwassenen.</h2>
+			<button id="age-gate-confirm" class="btn btn-primary">Ja, ik ben meerderjarig</button>
+			<a href="https://www.facebook.com/" class="decline-link">Nee, verlaat deze pagina</a>
+			<div class="quiz-legal-footer">
+				Door toegang te krijgen tot deze site ga je akkoord met onze algemene voorwaarden en bevestig je dat je conform de wetgeving in jouw regio gerechtigd bent om deze inhoud te bekijken.
+			</div>
+		</div>
+	</div>
+
+	<script>
+		(function () {
+			const gate = document.getElementById('age-gate');
+
+			if (sessionStorage.getItem('age-verified') === '1') {
+				gate.remove();
+				return;
+			}
+
+			document.body.style.overflow = 'hidden';
+
+			document.getElementById('age-gate-confirm').addEventListener('mouseenter', function () {
+				this.style.background = 'var(--gold)';
+				this.style.color = 'var(--bg)';
+			});
+			document.getElementById('age-gate-confirm').addEventListener('mouseleave', function () {
+				this.style.background = 'transparent';
+				this.style.color = 'var(--gold)';
+			});
+
+			document.getElementById('age-gate-confirm').addEventListener('click', function () {
+				sessionStorage.setItem('age-verified', '1');
+				document.body.style.overflow = '';
+				gate.style.transition = 'opacity .3s';
+				gate.style.opacity = '0';
+				setTimeout(() => gate.remove(), 300);
+			});
+		})();
+	</script>
+
+	<div id="cookie-banner" class="cookie-banner" style="display: none;">
+		<p>Wij gebruiken cookies om je ervaring te verbeteren en onze diensten te analyseren. Ga je akkoord?</p>
+		<div class="cookie-buttons">
+			<button onclick="acceptCookies()" class="btn-cookie accept">Akkoord</button>
+			<button onclick="declineCookies()" class="btn-cookie decline">Weigeren</button>
+		</div>
+	</div>
+
+	<script src="./assets/quiz-res.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wellness Quiz</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" media="print" onload="this.media='all'">
+	<style>
+	:root {
+		--accent-color: #D4A373;
+		--text-color: #333333;
+		--overlay: rgba(250, 248, 245, 0.8);
+		--body-gradient: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+	}
+
+	html{
+		background: var(--body-gradient);
+		font-size: 17px;
+	}
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		font-family: 'Montserrat', sans-serif;
+		overflow: hidden;
+		font-size: 1rem;
+		line-height: 1.4;
+	}
+	body{
+
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		transition: background-image 0.8s ease-in-out;
+	}
+	body::before {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.25);
+		backdrop-filter: blur(15px);
+		pointer-events: none;
+	}
+
+	p{
+		font-size: 1.1em;
+	}
+
+	.quiz-section {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2.5vh 0;
+		box-sizing: border-box;
+		opacity: 0;
+		visibility: hidden;
+		overflow-y: auto;
+		overflow-x: hidden;
+		transition: opacity 0.5s ease;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.quiz-section.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.screen {
+		background: var(--overlay);
+		backdrop-filter: blur(0.6em);
+		-webkit-backdrop-filter: blur(0.6em);
+		width: 95%;
+		max-width: 32rem;
+		padding: 5% 5%;
+		border-radius: 1.5em;
+		box-shadow: 0 1em 2.5em rgba(0, 0, 0, 0.1);
+		text-align: center;
+		box-sizing: border-box;
+		margin: auto;
+		flex-shrink: 0;
+	}
+
+	h2,
+	h3 {
+		margin-top: 0;
+		margin-bottom: 1.2rem;
+		color: var(--text-color);
+		font-weight: 500;
+		font-size: 1.5rem;
+	}
+
+	#results-description {
+		text-align: left;
+		margin-bottom: 1.5rem;
+		font-size: 0.95rem;
+		color: #555;
+	}
+
+	#results-description p {
+		font-size: 1.1em;
+		margin-bottom: 0.5em;
+		line-height: 1.4;
+	}
+
+	.btn {
+		display: block;
+		width: 100%;
+		padding: 0.75em 1em;
+		margin-bottom: 0.75em;
+		background: #fff;
+		border: 0.07em solid #e0e0e0;
+		border-radius: 0.9em;
+		cursor: pointer;
+		font-size: 1.25em;
+		transition: all 0.25s ease;
+		text-decoration: none;
+		color: inherit;
+		box-sizing: border-box;
+	}
+
+	a.btn {
+		padding-left: 0;
+		padding-right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.75em 1em;
+	}
+
+	.btn:hover {
+		border-color: var(--accent-color);
+		background: #fdfaf7;
+		transform: translateY(-0.1em);
+	}
+
+	.btn-primary {
+		background: var(--accent-color);
+		color: #fff;
+		/* border: none; */
+		font-weight: bold;
+		margin-top: 0.6em;
+	}
+
+	.btn-primary:hover {
+		color: var(--accent-color);
+	}
+
+	input[type="email"] {
+		width: 100%;
+		padding: 1em;
+		margin-bottom: 1em;
+		border-radius: 0.9em;
+		border: 0.07em solid #e0e0e0;
+		box-sizing: border-box;
+		font-size: 1rem;
+		text-align: center;
+	}
+
+	.progress-bar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 0.4rem;
+		background: var(--accent-color);
+		transition: width 0.4s ease;
+		z-index: 100;
+	}
+
+	#final-actions a.btn{
+		margin-top: 1.75em;
+	}
+
+	/* Стили для темной темы */
+	@media (prefers-color-scheme: dark) {
+		:root {
+			/* Инвертируем базовые цвета для темной темы */
+			--bg-color: #1a1a1a;
+			--text-color: #f5f5f5;
+			--overlay: rgba(40, 40, 40, 0.8);
+			--btn-bg: #383838;
+			--btn-primary-bg: #8C4600;
+			--border-color: #444444;
+			--body-gradient: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+		}
+
+		html{
+			background: var(--body-gradient);
+		}
+
+		body {
+			color: var(--text-color);
+		}
+		body::before {
+			background: rgba(0, 0, 0, 0.25);
+		}
+
+		.screen {
+			background: var(--overlay);
+			box-shadow: 0 1em 3em rgba(0, 0, 0, 0.4);
+			/* Усиливаем блюр для темной темы для глубины */
+			backdrop-filter: blur(1em);
+			-webkit-backdrop-filter: blur(1em);
+		}
+
+		h2, h3 {
+			color: var(--text-color);
+		}
+
+		.btn {
+			background: var(--btn-bg);
+			border-color: var(--border-color);
+			color: var(--text-color);
+		}
+
+		.btn:hover {
+			background: #383838;
+			border-color: var(--accent-color);
+		}
+		.btn-primary {
+			background: var(--btn-primary-bg);
+		}
+
+		input[type="email"] {
+			background: var(--btn-bg);
+			border-color: var(--border-color);
+			color: var(--text-color);
+		}
+
+		input[type="email"]::placeholder {
+			color: #888;
+		}
+
+		#results-description {
+			color: #cccccc;
+		}
+
+		/* Разделитель "of" (или) */
+		#final-actions p {
+			color: #777;
+		}
+
+		.btn-primary {
+			box-shadow: 0 0.3em 1.2em rgba(212, 163, 115, 0.15);
+		}
+		.logo{
+			filter: invert(1);
+		}
+	}
+</style>
+</head>
+
+<body>
+	<div id="quiz-app">
+		<div class="progress-bar" id="progress"></div>
+		<div id="sections-container"></div>
+	</div>
+	<script>
+		const baseUrl = "https://www.alohaclub.nl/collections/speeltjes-voor-haar/";
+
+	// Объект с расшифровками предпочтений
+	const descriptions = {
+		"FirstExperience": "Je staat aan het begin van een mooie ontdekkingsreis. We hebben producten geselecteerd die intuïtief en toegankelijk zijn.",
+		"SoloPractices": "Je kiest voor quality-time met jezelf. Focus op ontspanning en het ontdekken van je eigen ritme.",
+		"PartnerGames": "Samen op avontuur gaan versterkt de band. Deze selectie is gericht op gedeeld plezier en nieuwe dynamiek.",
+		"SensualWellness": "Voor jou is plezier een essentieel onderdeel van zelfzorg, net als een goede skincare routine.",
+		"GentleStimulation": "Je houdt van een subtiele opbouw. Zachte aanrakingen die leiden tot een diepe voldoening.",
+		"PointStimulation": "Precisie is voor jou de sleutel. Je weet precies wat werkt en zoekt gerichte intensiteit.",
+		"WaveStimulation": "Innovatieve luchtdrukgolven bieden een nieuwe dimensie van genot zonder direct contact.",
+		"DeepMassage": "Krachtige en diepe vibraties zorgen voor een volledige ontspanning van lichaam en geest.",
+		"DelicateDesign": "Je waardeert zachte vormen en een vrouwelijke esthetiek die past bij je interieur.",
+		"PremiumDesign": "Alleen het beste is goed genoeg. Luxe materialen en tijdloos design staan bij jou voorop.",
+		"PlayfulDesign": "Plezier mag kleurrijk en vrolijk zijn. Jouw stijl is energiek en ongeremd.",
+		"DiscreetDesign": "Elegantie zit in de eenvoud. Jouв voorkeur gaat uit naar subtiele designs die niet direct alles verraden."
+	};
+
+	const quizData = [{
+		id: "start",
+		bg: "./img/q-start.webp",
+		html: `
+		<img class="logo" src="./img/logo.webp" alt="logo" width="128" height="114">
+		<p>Onze winkel heeft samen met seksuologen en welzijnsexperts een korte quiz samengesteld — zodat jij kunt ontdekken wat jouw intieme leven nog mooier kan maken.</p>
+		<p>Drie vragen. Geen verkeerde antwoorden. Alleen jij en jouw wensen.</p>
+		`,
+		isStart: true
+	},
+	{
+		id: "q1",
+		title: "Voor welk moment zoek jij jouw pleasureproduct?",
+		bg: "./img/q1.webp",
+		options: [
+		{ key: "FirstExperience", text: "Mijn eerste ontdekking" },
+		{ key: "SoloPractices", text: "Me-time & ontspanning" },
+		{ key: "PartnerGames", text: "Samen op verkenning" },
+		{ key: "SensualWellness", text: "Sensuele self-car" },
+		{ key: "FirstExperience", text: "Weet ik niet zeker" },
+		]
+	},
+	{
+		id: "q2",
+		title: "Welke sensatie spreekt je het meeste aan?",
+		bg: "./img/q2.webp",
+		options: [
+		{ key: "GentleStimulation", text: "Zachte, subtiele aanraking" },
+		{ key: "PointStimulation", text: "Gerichte, intense focus" },
+		{ key: "WaveStimulation", text: "Pulserende luchtdrukgolven" },
+		{ key: "DeepMassage", text: "Diepe, krachtige vibraties" }
+		]
+	},
+	{
+		id: "q3",
+		title: "Welke stijl past het beste bij jou?",
+		bg: "./img/q3.webp",
+		options: [
+		{ key: "DelicateDesign", text: "Zacht en vrouwelijk" },
+		{ key: "PremiumDesign", text: "Stijlvol en luxe" },
+		{ key: "PlayfulDesign", text: "Vrolijk en kleurrijk" },
+		{ key: "DiscreetDesign", text: "Discreet en subtiel" }
+		]
+	},
+	{
+		id: "final",
+		bg: "./img/q-final.webp",
+		html: "",
+		isFinal: true
+	}
+	];
+
+	let currentStep = 0;
+	const selections = [];
+
+	function init() {
+		renderAllSections();
+		loadFromLocalStorage();
+		handleRouting();
+		window.addEventListener('hashchange', handleRouting);
+	}
+
+	function loadFromLocalStorage() {
+		const saved = localStorage.getItem('quiz_results');
+		if (saved) {
+			const data = JSON.parse(saved);
+			if (data.answers) {
+				selections.length = 0;
+				data.answers.forEach(val => selections.push(val));
+			}
+		}
+	}
+
+	function renderAllSections() {
+		const container = document.getElementById('sections-container');
+		quizData.forEach((step, index) => {
+			const section = document.createElement('section');
+			section.className = `quiz-section step-${index}`;
+			section.id = `step-${index}`;
+			// section.style.backgroundImage = `url('${step.bg}')`;
+
+			let content = '';
+			if (step.isStart) {
+				content = `
+				${step.html}
+				<button class="btn btn-primary" onclick="nextStep()">Start</button>
+				`;
+			} else if (step.isFinal) {
+				content = `
+				${step.html}
+				<div id="results-description"></div>
+
+				<div id="final-actions">
+				<a href="#" id="direct-link" class="btn btn-primary">Ga naar de aanbeveling</a>
+
+				<input type="email" id="email" placeholder="E-mailadres" required>
+				<button class="btn btn-primary" onclick="finishWithEmail()">Verstuur & Bekijk resultaat</button>
+				</div>
+				`;
+				// <a href="#" id="direct-link" class="btn btn-primary">Direct naar aanbeveling</a>
+			} else {
+				content = `<h2>${step.title}</h2>`;
+				step.options.forEach(opt => {
+					content += `<button class="btn" onclick="makeSelection('${opt.key}')">${opt.text}</button>`;
+				});
+			}
+
+			section.innerHTML = `<div class="screen">${content}</div>`;
+			container.appendChild(section);
+		});
+	}
+
+	function handleRouting() {
+		const hash = window.location.hash.replace('#step-', '');
+		currentStep = hash ? parseInt(hash) : 0;
+
+    	// МЕНЯЕМ ФОН BODY
+    	const nextBg = quizData[currentStep].bg;
+    	if (nextBg) {
+    		document.body.style.backgroundImage = `url('${nextBg}')`;
+    	}
+
+    	document.querySelectorAll('.quiz-section').forEach((s, idx) => {
+    		s.classList.toggle('active', idx === currentStep);
+    	});
+
+    	const progress = (currentStep / (quizData.length - 1)) * 100;
+    	document.getElementById('progress').style.width = `${progress}%`;
+
+    	if (quizData[currentStep].isFinal) {
+    		injectDescriptions();
+    		updateFinalLink();
+    	}
+    }
+
+    function injectDescriptions() {
+    	const descContainer = document.querySelector('.step-' + currentStep + ' #results-description');
+    	if (!descContainer) return;
+
+		descContainer.innerHTML = ''; // Очищаем
+		selections.forEach(key => {
+			if (descriptions[key]) {
+				const p = document.createElement('p');
+				p.textContent = descriptions[key];
+				descContainer.appendChild(p);
+			}
+		});
+	}
+
+	function nextStep() {
+		const next = currentStep + 1;
+		if (next < quizData.length) window.location.hash = `step-${next}`;
+	}
+
+	function makeSelection(key) {
+		const questionIdx = currentStep - 1;
+		selections[questionIdx] = key;
+		localStorage.setItem('quiz_results', JSON.stringify({ answers: selections }));
+		nextStep();
+	}
+
+	function generateFinalUrl() {
+		const currentQueryParams = window.location.search;
+
+		const quizResultsPath = selections.join('+');
+
+		let finalUrl = baseUrl + quizResultsPath;
+
+		if (currentQueryParams) {
+			const separator = finalUrl.includes('?') ? '&' : '?';
+			finalUrl += separator + currentQueryParams.substring(1);
+		}
+
+		return finalUrl;
+	}
+
+	function updateFinalLink() {
+		const linkElem = document.querySelector('.step-' + currentStep + ' #direct-link');
+		if (linkElem) linkElem.href = generateFinalUrl();
+	}
+
+	function finishWithEmail() {
+		const email = document.getElementById('email').value;
+		if (!email.includes('@')) return alert('Voer аub een geldig e-mailadres in.');
+		window.location.href = generateFinalUrl();
+	}
+
+	init();
+</script>
+</body>
+
+</html>

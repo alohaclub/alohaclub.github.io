@@ -1,0 +1,4 @@
+User-agent: *
+Allow: *
+Disallow: *cloudflare*.js
+Disallow: */cdn-cgi/*
