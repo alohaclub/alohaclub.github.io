@@ -38,6 +38,9 @@ body::before {
 	backdrop-filter: blur(15px);
 	pointer-events: none;
 }
+.dn{
+	display: none !important;
+}
 
 p{
 	font-size: 1.1em;

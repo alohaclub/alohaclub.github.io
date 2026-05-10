@@ -5,16 +5,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aloha Intimate Wellness Quiz</title>
+	<meta name="description" content="Doe de gratis Intimate Wellness Quiz van Aloha. Ontdek in 2 minuten welke opties voor comfort en intimate zelfzorg bij jou passen">
 
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://alohaclub.github.io/quiz/" />
-	<meta property="og:title" content="Aloha Intimate Wellness Quiz" />
-	<meta property="og:description" content="Doe de korte quiz en ontdek welke wellness-oplossing past bij jouw comfort en zelfzorg. Samengesteld met gezondheidsexperts." />
-	<meta property="og:image" content="/img/fav512.png" />
-	<meta property="og:image:width" content="512" />
-	<meta property="og:image:height" content="512" />
-	<meta property="og:locale" content="nl" />
-	<meta property="og:site_name" content="Hallo Aloha" />
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://alohaclub.github.io/quiz/">
+	<meta property="og:title" content="Aloha Intimate Wellness Quiz">
+	<meta property="og:description" content="Doe de korte quiz en ontdek welke intimate wellness-oplossing past bij jouw comfort en zelfzorg. Samengesteld met gezondheidsexperts">
+	<meta property="og:image" content="/img/fav512.png">
+	<meta property="og:image:width" content="512">
+	<meta property="og:image:height" content="512">
+	<meta property="og:site_name" content="Hallo Aloha">
 
 	<link rel="alternate icon" href="/img/fav.png" sizes="32x32" type="image/png">
 
@@ -31,6 +31,14 @@
 		<div class="progress-bar" id="progress"></div>
 		<div id="sections-container"></div>
 	</div>
+
+	<noscript>
+		<h1>Aloha Intimate Wellness Quiz</h1>
+		<p>Veel mensen zoeken naar verschillende mogelijkheden in intieme wellness, maar weten niet waar te beginnen.
+		De korte Aloha-quiz geeft een praktisch overzicht van opties voor comfort en zelfzorg.</p>
+		<p>Voorlichting, geen medisch advies. De quiz duurt 2 minuten en is anoniem.</p>
+	</noscript>
+
 
 	<div id="age-gate">
 		<div class="screen">
@@ -80,6 +88,20 @@
 			<button onclick="declineCookies()" class="btn-cookie decline">Weigeren</button>
 		</div>
 	</div>
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "Intimate Wellness Quiz",
+			"description": "Gratis quiz voor praktische inzichten in comfort en zelfzorg",
+			"isAccessibleForFree": true,
+			"audience": {
+				"@type": "PeopleAudience",
+				"suggestedMinAge": 20
+			}
+		}
+	</script>
 
 	<script src="./assets/quiz.js" defer></script>
 </body>
