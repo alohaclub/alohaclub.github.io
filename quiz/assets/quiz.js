@@ -1,7 +1,7 @@
 
 const pix = {
-	aloha: '2664730533928587',
-	quiz: '1935071070694393',
+	aloha: '1935071070694393',
+	quiz: '2664730533928587',
 }
 
 const baseUrl = "./quiz-results.html";
