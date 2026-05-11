@@ -1,0 +1,1346 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Рекламный материал | Aloha Club</title>
+	<meta name="description" content="Aloha Club: интимная self-care для мужчин в Нидерландах и Бельгии. Контроль, уверенность, приватность и дискретная доставка.">
+	<style>
+	:root {
+		--bg: #0f1412;
+		--bg-soft: #18211e;
+		--card: #f7f3ea;
+		--card-soft: #fffaf0;
+		--text: #17201d;
+		--muted: #66736d;
+		--white: #fffdf7;
+		--line: rgba(23,32,29,.14);
+		--accent: #13b58a;
+		--accent-dark: #0d7c63;
+		--gold: #e6bd65;
+		--danger: #df6b57;
+		--shadow: 0 24px 70px rgba(0,0,0,.20);
+		--radius-xl: 32px;
+		--radius-lg: 22px;
+		--radius-md: 16px;
+		--wrap: 1120px;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+		line-height: 1.55;
+		color: var(--text);
+		background:
+		radial-gradient(circle at top left, rgba(19,181,138,.22), transparent 30rem),
+		linear-gradient(180deg, #0f1412 0, #15201c 38rem, #efe8d9 38rem, #efe8d9 100%);
+	}
+
+	body.is-locked {
+		overflow: hidden;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	img {
+		display: block;
+		max-width: 100%;
+	}
+
+	button,
+	input,
+	select,
+	textarea {
+		font: inherit;
+	}
+
+	.wrap {
+		width: min(var(--wrap), calc(100% - 32px));
+		margin: 0 auto;
+	}
+
+	.topbar {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		backdrop-filter: blur(16px);
+		background: rgba(15,20,18,.74);
+		border-bottom: 1px solid rgba(255,255,255,.08);
+	}
+
+	.topbar__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 18px;
+		padding: 14px 0;
+		color: var(--white);
+	}
+
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		font-weight: 850;
+		letter-spacing: -.03em;
+	}
+
+	.brand__mark {
+		width: 36px;
+		height: 36px;
+		border-radius: 12px;
+		background: linear-gradient(135deg, var(--accent), var(--gold));
+		box-shadow: 0 10px 30px rgba(19,181,138,.34);
+		position: relative;
+	}
+
+	.brand__mark::after {
+		content: "";
+		position: absolute;
+		inset: 10px;
+		border-radius: 50%;
+		border: 2px solid rgba(255,255,255,.78);
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		font-size: 14px;
+		color: rgba(255,255,255,.76);
+	}
+
+	.nav a:hover {
+		color: var(--white);
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		min-height: 48px;
+		padding: 13px 20px;
+		border-radius: 999px;
+		border: 0;
+		cursor: pointer;
+		font-weight: 800;
+		letter-spacing: -.01em;
+		transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+	}
+
+	.btn:hover {
+		transform: translateY(-1px);
+	}
+
+	.btn--primary {
+		color: #07120f;
+		background: linear-gradient(135deg, #22d9a8, #e8c56f);
+		box-shadow: 0 18px 34px rgba(19,181,138,.22);
+	}
+
+	.btn--dark {
+		color: var(--white);
+		background: #101816;
+		box-shadow: 0 16px 32px rgba(0,0,0,.20);
+	}
+
+	.btn--ghost {
+		color: var(--white);
+		background: rgba(255,255,255,.10);
+		border: 1px solid rgba(255,255,255,.14);
+	}
+
+	.ad-label {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		width: fit-content;
+		padding: 7px 12px;
+		border-radius: 999px;
+		font-size: 13px;
+		font-weight: 800;
+		letter-spacing: .03em;
+		text-transform: uppercase;
+		color: rgba(255,255,255,.78);
+		background: rgba(255,255,255,.10);
+		border: 1px solid rgba(255,255,255,.12);
+	}
+
+	.hero {
+		padding: 74px 0 58px;
+		color: var(--white);
+	}
+
+	.hero__grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.03fr) minmax(320px, .72fr);
+		gap: 36px;
+		align-items: center;
+	}
+
+	.kicker {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		margin: 18px 0 0;
+		font-weight: 750;
+		color: #97ead5;
+	}
+
+	.kicker::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: var(--accent);
+		box-shadow: 0 0 0 7px rgba(19,181,138,.13);
+	}
+
+	h1 {
+		max-width: 880px;
+		margin: 18px 0 20px;
+		font-size: clamp(42px, 7vw, 82px);
+		line-height: .95;
+		letter-spacing: -.07em;
+	}
+
+	.hero__lead {
+		max-width: 720px;
+		margin: 0;
+		font-size: clamp(18px, 2.2vw, 24px);
+		line-height: 1.45;
+		color: rgba(255,255,255,.82);
+	}
+
+	.hero__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-top: 30px;
+	}
+
+	.hero__note {
+		margin-top: 22px;
+		font-size: 14px;
+		color: rgba(255,255,255,.58);
+	}
+
+	.hero-card {
+		padding: 22px;
+		border-radius: var(--radius-xl);
+		background:
+		linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.06)),
+		rgba(255,255,255,.06);
+		border: 1px solid rgba(255,255,255,.12);
+		box-shadow: 0 30px 90px rgba(0,0,0,.28);
+	}
+
+	.hero-card__visual {
+		min-height: 350px;
+		border-radius: 26px;
+		background:
+		radial-gradient(circle at 72% 18%, rgba(232,197,111,.55), transparent 8rem),
+		radial-gradient(circle at 25% 72%, rgba(19,181,138,.56), transparent 10rem),
+		linear-gradient(145deg, #24302b, #101613 72%);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-card__visual::before,
+	.hero-card__visual::after {
+		content: "";
+		position: absolute;
+		border-radius: 999px;
+		background: rgba(255,255,255,.08);
+		transform: rotate(-24deg);
+	}
+
+	.hero-card__visual::before {
+		width: 240px;
+		height: 90px;
+		left: 42px;
+		top: 86px;
+	}
+
+	.hero-card__visual::after {
+		width: 350px;
+		height: 112px;
+		right: -84px;
+		bottom: 48px;
+	}
+
+	.hero-card__badge {
+		position: absolute;
+		left: 20px;
+		bottom: 20px;
+		right: 20px;
+		padding: 18px;
+		border-radius: 20px;
+		background: rgba(255,253,247,.92);
+		color: var(--text);
+		box-shadow: 0 16px 40px rgba(0,0,0,.26);
+	}
+
+	.hero-card__badge strong {
+		display: block;
+		font-size: 18px;
+		letter-spacing: -.03em;
+	}
+
+	.hero-card__badge span {
+		display: block;
+		margin-top: 4px;
+		color: var(--muted);
+		font-size: 14px;
+	}
+
+	.trust-strip {
+		margin-top: 24px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+	}
+
+	.trust-item {
+		padding: 14px;
+		border-radius: 18px;
+		background: rgba(255,255,255,.08);
+		border: 1px solid rgba(255,255,255,.09);
+		font-size: 14px;
+		color: rgba(255,255,255,.76);
+	}
+
+	.trust-item b {
+		display: block;
+		color: var(--white);
+		margin-bottom: 4px;
+	}
+
+	.section {
+		padding: 58px 0;
+	}
+
+	.section--cream {
+		background: #efe8d9;
+	}
+
+	.section--dark {
+		background: #101816;
+		color: var(--white);
+	}
+
+	.section__head {
+		display: grid;
+		grid-template-columns: minmax(0, .8fr) minmax(300px, .55fr);
+		gap: 30px;
+		align-items: end;
+		margin-bottom: 28px;
+	}
+
+	.eyebrow {
+		margin: 0 0 10px;
+		font-weight: 850;
+		font-size: 13px;
+		letter-spacing: .13em;
+		text-transform: uppercase;
+		color: var(--accent-dark);
+	}
+
+	.section--dark .eyebrow {
+		color: #97ead5;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: clamp(30px, 4.8vw, 58px);
+		line-height: 1.02;
+		letter-spacing: -.055em;
+	}
+
+	.section__intro {
+		margin: 0;
+		font-size: 18px;
+		color: var(--muted);
+	}
+
+	.section--dark .section__intro {
+		color: rgba(255,255,255,.68);
+	}
+
+	.content-card {
+		padding: clamp(22px, 4vw, 42px);
+		border-radius: var(--radius-xl);
+		background: var(--card-soft);
+		box-shadow: var(--shadow);
+		border: 1px solid rgba(23,32,29,.08);
+	}
+
+	.content-card p {
+		margin: 0 0 18px;
+		font-size: 18px;
+		color: #394540;
+	}
+
+	.content-card p:last-child {
+		margin-bottom: 0;
+	}
+
+	.two-col {
+		display: grid;
+		grid-template-columns: .86fr 1.14fr;
+		gap: 22px;
+		align-items: stretch;
+	}
+
+	.founder-card {
+		padding: 30px;
+		border-radius: var(--radius-xl);
+		background:
+		radial-gradient(circle at 90% 8%, rgba(230,189,101,.28), transparent 10rem),
+		linear-gradient(145deg, #fffaf0, #f0e5d1);
+		box-shadow: var(--shadow);
+		border: 1px solid rgba(23,32,29,.08);
+	}
+
+	.avatar {
+		display: grid;
+		place-items: center;
+		width: 76px;
+		height: 76px;
+		margin-bottom: 20px;
+		border-radius: 24px;
+		background: linear-gradient(135deg, var(--accent), var(--gold));
+		font-weight: 900;
+		font-size: 24px;
+		color: #07120f;
+	}
+
+	.founder-card h3,
+	.benefit-card h3 {
+		margin: 0 0 12px;
+		font-size: 28px;
+		line-height: 1.08;
+		letter-spacing: -.04em;
+	}
+
+	.founder-card p {
+		margin: 0 0 14px;
+		color: #45514c;
+	}
+
+	.benefits-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 14px;
+	}
+
+	.benefit-card {
+		padding: 22px;
+		border-radius: 24px;
+		background: #fffaf0;
+		border: 1px solid rgba(23,32,29,.08);
+		box-shadow: 0 15px 40px rgba(0,0,0,.08);
+	}
+
+	.benefit-card p {
+		margin: 0;
+		color: var(--muted);
+	}
+
+	.products-shell {
+		border-radius: var(--radius-xl);
+		background: rgba(255,255,255,.06);
+		border: 1px solid rgba(255,255,255,.11);
+		box-shadow: 0 28px 80px rgba(0,0,0,.24);
+		overflow: hidden;
+	}
+
+	.product-accordion {
+		border-bottom: 1px solid rgba(255,255,255,.10);
+		background: rgba(255,255,255,.025);
+	}
+
+	.product-accordion:last-child {
+		border-bottom: 0;
+	}
+
+	.product-toggle {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 18px;
+		align-items: center;
+		padding: clamp(20px, 3vw, 30px);
+		border: 0;
+		color: var(--white);
+		background: transparent;
+		cursor: pointer;
+		text-align: left;
+	}
+
+	.product-toggle:hover {
+		background: rgba(255,255,255,.04);
+	}
+
+	.product-title-wrap {
+		display: flex;
+		align-items: flex-start;
+		gap: 16px;
+	}
+
+	.product-num {
+		flex: 0 0 auto;
+		display: grid;
+		place-items: center;
+		width: 42px;
+		height: 42px;
+		border-radius: 16px;
+		background: rgba(19,181,138,.16);
+		color: #9df2da;
+		font-weight: 900;
+	}
+
+	h4 {
+		margin: 0 0 5px;
+		font-size: clamp(22px, 3vw, 34px);
+		line-height: 1.05;
+		letter-spacing: -.04em;
+	}
+
+	.product-subtitle {
+		margin: 0;
+		color: rgba(255,255,255,.64);
+		font-size: 15px;
+	}
+
+	.chevron {
+		display: grid;
+		place-items: center;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background: rgba(255,255,255,.10);
+		color: var(--white);
+		transition: transform .2s ease, background .2s ease;
+	}
+
+	.product-toggle[aria-expanded="true"] .chevron,
+	.faq-toggle[aria-expanded="true"] .chevron {
+		transform: rotate(180deg);
+		background: rgba(19,181,138,.20);
+	}
+
+	.product-panel {
+		display: none;
+		padding: 0 clamp(20px, 3vw, 30px) clamp(22px, 3vw, 34px);
+	}
+
+	.product-panel.is-open {
+		display: block;
+		animation: reveal .22s ease both;
+	}
+
+	@keyframes reveal {
+		from {
+			opacity: 0;
+			transform: translateY(-6px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.product-body {
+		display: grid;
+		grid-template-columns: minmax(280px, .82fr) minmax(0, 1fr);
+		gap: 24px;
+		align-items: stretch;
+	}
+
+	.product-media {
+		display: grid;
+		gap: 12px;
+	}
+
+	.media-box {
+		min-height: 220px;
+		padding: 18px;
+		border-radius: 26px;
+		background:
+		radial-gradient(circle at 70% 20%, rgba(230,189,101,.28), transparent 8rem),
+		linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+		border: 1px solid rgba(255,255,255,.11);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.media-box::before {
+		content: "";
+		position: absolute;
+		inset: 54px 22px;
+		border-radius: 999px;
+		background: rgba(255,255,255,.10);
+		transform: rotate(-19deg);
+	}
+
+	.media-box__label {
+		position: absolute;
+		left: 16px;
+		bottom: 16px;
+		padding: 8px 11px;
+		border-radius: 999px;
+		font-size: 13px;
+		font-weight: 800;
+		color: rgba(255,255,255,.86);
+		background: rgba(0,0,0,.28);
+		border: 1px solid rgba(255,255,255,.12);
+	}
+
+	.product-copy {
+		padding: 26px;
+		border-radius: 28px;
+		background: rgba(255,253,247,.96);
+		color: var(--text);
+	}
+
+	.product-copy p {
+		margin: 0 0 15px;
+		color: #46514d;
+	}
+
+	.fit-box {
+		margin: 18px 0 20px;
+		padding: 16px;
+		border-radius: 18px;
+		background: #edf7f2;
+		border: 1px solid rgba(19,181,138,.18);
+	}
+
+	.fit-box strong {
+		display: block;
+		margin-bottom: 5px;
+		color: #0b5d4b;
+	}
+
+	.product-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin-top: 10px;
+	}
+
+	.tag {
+		display: inline-flex;
+		align-items: center;
+		padding: 7px 10px;
+		border-radius: 999px;
+		background: rgba(13,124,99,.10);
+		color: #0b5d4b;
+		font-size: 13px;
+		font-weight: 800;
+	}
+
+	.discreet-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 14px;
+	}
+
+	.discreet-card {
+		padding: 24px;
+		border-radius: 24px;
+		background: #fffaf0;
+		border: 1px solid rgba(23,32,29,.08);
+		box-shadow: 0 16px 40px rgba(0,0,0,.07);
+	}
+
+	.discreet-card__icon {
+		display: grid;
+		place-items: center;
+		width: 42px;
+		height: 42px;
+		margin-bottom: 14px;
+		border-radius: 15px;
+		background: rgba(19,181,138,.13);
+		color: var(--accent-dark);
+		font-weight: 900;
+	}
+
+	.discreet-card h3 {
+		margin: 0 0 9px;
+		font-size: 20px;
+		line-height: 1.12;
+		letter-spacing: -.03em;
+	}
+
+	.discreet-card p {
+		margin: 0;
+		color: var(--muted);
+		font-size: 15px;
+	}
+
+	.faq-list {
+		display: grid;
+		gap: 12px;
+	}
+
+	.faq-item {
+		border-radius: 22px;
+		background: #fffaf0;
+		border: 1px solid rgba(23,32,29,.09);
+		overflow: hidden;
+	}
+
+	.faq-toggle {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 16px;
+		align-items: center;
+		padding: 21px 22px;
+		border: 0;
+		background: transparent;
+		text-align: left;
+		cursor: pointer;
+		font-weight: 850;
+		font-size: 18px;
+		letter-spacing: -.02em;
+		color: var(--text);
+	}
+
+	.faq-toggle .chevron {
+		background: rgba(13,124,99,.08);
+		color: var(--accent-dark);
+	}
+
+	.faq-panel {
+		display: none;
+		padding: 0 22px 22px;
+		color: var(--muted);
+	}
+
+	.faq-panel.is-open {
+		display: block;
+		animation: reveal .22s ease both;
+	}
+
+	.faq-panel p {
+		margin: 0;
+	}
+
+	.footer-cta {
+		padding: 58px 0 76px;
+		background: #efe8d9;
+	}
+
+	.cta-card {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 24px;
+		align-items: center;
+		padding: clamp(26px, 4vw, 46px);
+		border-radius: var(--radius-xl);
+		background:
+		radial-gradient(circle at 90% 20%, rgba(230,189,101,.30), transparent 12rem),
+		linear-gradient(145deg, #14201c, #0d1210);
+		color: var(--white);
+		box-shadow: var(--shadow);
+	}
+
+	.cta-card h2 {
+		max-width: 760px;
+	}
+
+	.cta-card p {
+		max-width: 720px;
+		margin: 14px 0 0;
+		color: rgba(255,255,255,.70);
+		font-size: 18px;
+	}
+
+	.age-note {
+		margin-top: 18px;
+		font-size: 13px;
+		color: rgba(255,255,255,.52);
+	}
+
+	.mobile-menu-btn {
+		display: none;
+	}
+
+	@media (max-width: 920px) {
+		.nav {
+			display: none;
+		}
+
+		.mobile-menu-btn {
+			display: inline-flex;
+		}
+
+		.hero__grid,
+		.section__head,
+		.two-col,
+		.product-body,
+		.cta-card {
+			grid-template-columns: 1fr;
+		}
+
+		.hero {
+			padding-top: 46px;
+		}
+
+		.hero-card__visual {
+			min-height: 280px;
+		}
+
+		.discreet-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 640px) {
+		body {
+			background:
+			radial-gradient(circle at top left, rgba(19,181,138,.22), transparent 22rem),
+			linear-gradient(180deg, #0f1412 0, #15201c 46rem, #efe8d9 46rem, #efe8d9 100%);
+		}
+
+		.wrap {
+			width: min(100% - 22px, var(--wrap));
+		}
+
+		h1 {
+			letter-spacing: -.055em;
+		}
+
+		.hero__actions,
+		.cta-card .btn,
+		.product-copy .btn {
+			width: 100%;
+		}
+
+		.btn {
+			width: 100%;
+		}
+
+		.trust-strip,
+		.benefits-grid,
+		.discreet-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.product-toggle,
+		.faq-toggle {
+			grid-template-columns: 1fr;
+		}
+
+		.chevron {
+			justify-self: start;
+		}
+
+		.product-title-wrap {
+			gap: 12px;
+		}
+
+		.product-num {
+			width: 36px;
+			height: 36px;
+			border-radius: 13px;
+		}
+	}
+</style>
+</head>
+<body>
+	<header class="topbar" aria-label="Верхняя навигация">
+		<div class="wrap topbar__inner">
+			<a class="brand" href="#top" aria-label="Aloha Club">
+				<span class="brand__mark" aria-hidden="true"></span>
+				<span>Aloha Club</span>
+			</a>
+			<nav class="nav" aria-label="Основная навигация">
+				<a href="#why">Почему это нормально</a>
+				<a href="#products">Решения</a>
+				<a href="#delivery">Доставка</a>
+				<a href="#faq">FAQ</a>
+			</nav>
+			<a class="btn btn--ghost" href="#products">Смотреть подборку</a>
+		</div>
+	</header>
+
+	<main id="top">
+		<section class="hero">
+			<div class="wrap hero__grid">
+				<div>
+					<div class="ad-label">Рекламный материал</div>
+					<p class="kicker">NL / BE · для мужчин 30–45</p>
+					<h1>Интимная self-care без неловкости и лишнего шума</h1>
+					<p class="hero__lead">Всё больше мужчин в Нидерландах воспринимают интимную self-care как что-то нормальное: практичное, личное и спокойное. Контроль, уверенность и комфорт важны не только в работе, спорте или повседневной жизни.</p>
+					<div class="hero__actions">
+						<a class="btn btn--primary" href="#products">Подобрать вариант</a>
+						<a class="btn btn--ghost" href="#why">Почему это не тренд</a>
+					</div>
+					<p class="hero__note">Дискретная доставка · нейтральная упаковка · понятная информация</p>
+				</div>
+
+				<aside class="hero-card" aria-label="Ключевые преимущества">
+					<div class="hero-card__visual">
+						<div class="hero-card__badge">
+							<strong>Больше контроля. Больше уверенности.</strong>
+							<span>Пять спокойных решений для личной self-care routine.</span>
+						</div>
+					</div>
+					<div class="trust-strip">
+						<div class="trust-item"><b>Приватно</b>Без заметной информации</div>
+						<div class="trust-item"><b>Понятно</b>Выбор по цели</div>
+						<div class="trust-item"><b>Спокойно</b>Без давления</div>
+					</div>
+				</aside>
+			</div>
+		</section>
+
+		<section id="why" class="section section--cream">
+			<div class="wrap">
+				<div class="section__head">
+					<div>
+						<p class="eyebrow">Почему это не просто тренд</p>
+						<h2>Близость часто начинается с нормального отношения к себе</h2>
+					</div>
+					<p class="section__intro">Self-care уже стала частью обычной жизни: сон, стресс, питание, спорт. Интимная уверенность — та же логика, просто тема дольше сидела в углу и делала вид, что её нет.</p>
+				</div>
+
+				<div class="content-card">
+					<p>Интимная self-care — это не только про новые ощущения. В исследованиях о качестве близости, отношениях и личном благополучии часто повторяется одна мысль: когда человек лучше понимает своё тело, свои реакции и свои предпочтения, ему легче чувствовать себя увереннее и спокойнее.</p>
+					<p>Это влияет не только на solo-моменты. Для многих людей такой опыт помогает открытее говорить с партнёром, меньше стесняться своих желаний и спокойнее относиться к интимной стороне жизни.</p>
+					<p>Важно и другое: близость часто связана с общим состоянием человека — стрессом, усталостью, самооценкой, доверием и ощущением безопасности. Поэтому продукты для интимной self-care могут быть не “странной покупкой”, а частью более взрослого отношения к себе.</p>
+					<p>Не как обещание мгновенного результата. А как способ лучше узнать себя, добавить больше контроля, комфорта и уверенности — в своём темпе и без давления.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--cream">
+			<div class="wrap two-col">
+				<article class="founder-card">
+					<div class="avatar" aria-hidden="true">L</div>
+					<h3>Почему я стал сооснователем Aloha Club</h3>
+					<p>Меня зовут Лу́ук. Мне 43 года, и я сооснователь Aloha Club.</p>
+					<p>Долгое время я почти ничего не знал о том, как напряжение, внимание к себе и расслабленность влияют на интимную жизнь. Не потому, что не хотел знать. Просто об этом редко говорят нормально.</p>
+					<p>Поэтому мы создали Aloha Club — место для людей, которые хотят открывать интимную self-care спокойно, дискретно и без стыда.</p>
+				</article>
+
+				<div class="benefits-grid" aria-label="Практические преимущества">
+					<article class="benefit-card">
+						<h3>Больше контроля</h3>
+						<p>Лучше чувствовать свои реакции, темп и напряжение.</p>
+					</article>
+					<article class="benefit-card">
+						<h3>Больше уверенности</h3>
+						<p>Меньше внутреннего давления и ожиданий.</p>
+					</article>
+					<article class="benefit-card">
+						<h3>Больше понимания тела</h3>
+						<p>Спокойнее узнавать, что подходит именно тебе.</p>
+					</article>
+					<article class="benefit-card">
+						<h3>Больше близости</h3>
+						<p>Легче говорить, пробовать новое и убирать неловкость из отношений.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="products" class="section section--dark">
+			<div class="wrap">
+				<div class="section__head">
+					<div>
+						<p class="eyebrow">Подборка Aloha Club</p>
+						<h2>Больше контроля. Больше уверенности. Дискретная доставка.</h2>
+					</div>
+					<p class="section__intro">Пять решений для мужчин, которые хотят спокойнее, осознаннее и увереннее понять, что им подходит. Первый вариант открыт сразу, остальные — без очереди и без драмы.</p>
+				</div>
+
+				<div class="products-shell" data-accordion-group="products">
+					<article class="product-accordion">
+						<button class="product-toggle" type="button" aria-expanded="true" aria-controls="product-panel-1" id="product-toggle-1">
+							<span class="product-title-wrap">
+								<span class="product-num">01</span>
+								<span>
+									<h4>The Scorpion 3-in-1</h4>
+									<span class="product-subtitle">Для направленного контроля и более полного ощущения тела</span>
+								</span>
+							</span>
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="product-panel is-open" id="product-panel-1" role="region" aria-labelledby="product-toggle-1">
+							<div class="product-body">
+								<div class="product-media">
+									<a class="media-box" href="#" aria-label="Изображение товара The Scorpion 3-in-1">
+										<span class="media-box__label">Изображение товара · заменить ссылку</span>
+									</a>
+									<a class="media-box" href="#" aria-label="GIF принципа работы The Scorpion 3-in-1">
+										<span class="media-box__label">GIF принципа работы · заменить ссылку</span>
+									</a>
+								</div>
+								<div class="product-copy">
+									<p>The Scorpion 3-in-1 подойдёт мужчинам, которые хотят выйти за рамки привычного сценария и лучше понимать, как тело реагирует в разных зонах. За счёт сочетания нескольких точек воздействия он помогает внимательнее ощущать связь между темпом, напряжением и стимуляцией.</p>
+									<p>Это хороший выбор, если хочется больше осознанности, более насыщенного опыта и ощущения контроля.</p>
+									<div class="fit-box">
+										<strong>Лучше всего подходит для:</strong>
+										<div class="product-tags">
+											<span class="tag">Контроль</span>
+											<span class="tag">Насыщенные ощущения</span>
+											<span class="tag">Изучение тела</span>
+										</div>
+									</div>
+									<a class="btn btn--dark" href="#">Посмотреть The Scorpion 3-in-1</a>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-accordion">
+						<button class="product-toggle" type="button" aria-expanded="false" aria-controls="product-panel-2" id="product-toggle-2">
+							<span class="product-title-wrap">
+								<span class="product-num">02</span>
+								<span>
+									<h4>Aloha Control X</h4>
+									<span class="product-subtitle">Для приватности, тишины и простого старта</span>
+								</span>
+							</span>
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="product-panel" id="product-panel-2" role="region" aria-labelledby="product-toggle-2">
+							<div class="product-body">
+								<div class="product-media">
+									<a class="media-box" href="#" aria-label="Изображение товара Aloha Control X">
+										<span class="media-box__label">Изображение товара · заменить ссылку</span>
+									</a>
+									<a class="media-box" href="#" aria-label="GIF принципа работы Aloha Control X">
+										<span class="media-box__label">GIF принципа работы · заменить ссылку</span>
+									</a>
+								</div>
+								<div class="product-copy">
+									<p>Aloha Control X — спокойный и понятный вариант для тех, кто хочет начать без лишней сложности. Компактный формат, тихое использование и удобное хранение делают его хорошим первым выбором для мужчин, которым важна дискретность.</p>
+									<p>Это решение для тех, кто хочет попробовать что-то личное, но не хочет ничего громкого, заметного или сложного.</p>
+									<div class="fit-box">
+										<strong>Лучше всего подходит для:</strong>
+										<div class="product-tags">
+											<span class="tag">Дискретность</span>
+											<span class="tag">Простой старт</span>
+											<span class="tag">Тихое использование</span>
+										</div>
+									</div>
+									<a class="btn btn--dark" href="#">Посмотреть Aloha Control X</a>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-accordion">
+						<button class="product-toggle" type="button" aria-expanded="false" aria-controls="product-panel-3" id="product-toggle-3">
+							<span class="product-title-wrap">
+								<span class="product-num">03</span>
+								<span>
+									<h4>The Vibra Sensation</h4>
+									<span class="product-subtitle">Для разнообразия без ощущения сложной покупки</span>
+								</span>
+							</span>
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="product-panel" id="product-panel-3" role="region" aria-labelledby="product-toggle-3">
+							<div class="product-body">
+								<div class="product-media">
+									<a class="media-box" href="#" aria-label="Изображение товара The Vibra Sensation">
+										<span class="media-box__label">Изображение товара · заменить ссылку</span>
+									</a>
+									<a class="media-box" href="#" aria-label="GIF принципа работы The Vibra Sensation">
+										<span class="media-box__label">GIF принципа работы · заменить ссылку</span>
+									</a>
+								</div>
+								<div class="product-copy">
+									<p>The Vibra Sensation подойдёт, если привычный сценарий стал слишком однообразным и хочется добавить новые ощущения спокойно, без резкого шага. С ним можно начать с более мягкого уровня и постепенно понять, какая интенсивность и формат подходят лучше.</p>
+									<p>Это хороший вариант для тех, кто хочет добавить вариативность, но сохранить ощущение простоты и контроля.</p>
+									<div class="fit-box">
+										<strong>Лучше всего подходит для:</strong>
+										<div class="product-tags">
+											<span class="tag">Вариативность</span>
+											<span class="tag">Новые ощущения</span>
+											<span class="tag">Доступный вход</span>
+										</div>
+									</div>
+									<a class="btn btn--dark" href="#">Посмотреть The Vibra Sensation</a>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-accordion">
+						<button class="product-toggle" type="button" aria-expanded="false" aria-controls="product-panel-4" id="product-toggle-4">
+							<span class="product-title-wrap">
+								<span class="product-num">04</span>
+								<span>
+									<h4>PulseControl</h4>
+									<span class="product-subtitle">Для осознанности и личной routine</span>
+								</span>
+							</span>
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="product-panel" id="product-panel-4" role="region" aria-labelledby="product-toggle-4">
+							<div class="product-body">
+								<div class="product-media">
+									<a class="media-box" href="#" aria-label="Изображение товара PulseControl">
+										<span class="media-box__label">Изображение товара · заменить ссылку</span>
+									</a>
+									<a class="media-box" href="#" aria-label="GIF принципа работы PulseControl">
+										<span class="media-box__label">GIF принципа работы · заменить ссылку</span>
+									</a>
+								</div>
+								<div class="product-copy">
+									<p>PulseControl подойдёт мужчинам, которым важно не просто попробовать что-то новое, а спокойнее относиться к темпу, напряжению и внутренней уверенности. Это вариант для более собранного и регулярного подхода к интимной self-care.</p>
+									<p>Он особенно хорошо подходит тем, кто хочет меньше спешки, больше внимания к ощущениям и понятный формат для личной routine.</p>
+									<div class="fit-box">
+										<strong>Лучше всего подходит для:</strong>
+										<div class="product-tags">
+											<span class="tag">Контроль как привычка</span>
+											<span class="tag">Уверенность</span>
+											<span class="tag">Регулярный self-care</span>
+										</div>
+									</div>
+									<a class="btn btn--dark" href="#">Посмотреть PulseControl</a>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-accordion">
+						<button class="product-toggle" type="button" aria-expanded="false" aria-controls="product-panel-5" id="product-toggle-5">
+							<span class="product-title-wrap">
+								<span class="product-num">05</span>
+								<span>
+									<h4>Prime Control</h4>
+									<span class="product-subtitle">Для premium-уровня и серьёзного подхода</span>
+								</span>
+							</span>
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="product-panel" id="product-panel-5" role="region" aria-labelledby="product-toggle-5">
+							<div class="product-body">
+								<div class="product-media">
+									<a class="media-box" href="#" aria-label="Изображение товара Prime Control">
+										<span class="media-box__label">Изображение товара · заменить ссылку</span>
+									</a>
+									<a class="media-box" href="#" aria-label="GIF принципа работы Prime Control">
+										<span class="media-box__label">GIF принципа работы · заменить ссылку</span>
+									</a>
+								</div>
+								<div class="product-copy">
+									<p>Prime Control — это более серьёзный вариант для мужчин, которые хотят больше комфорта, уверенности и ощущения продуманного выбора. Не импульсивная покупка, а часть личной self-care routine.</p>
+									<p>Он подойдёт тем, кто уже понимает, что хочет не самый простой вариант, а более качественное и premium-решение.</p>
+									<div class="fit-box">
+										<strong>Лучше всего подходит для:</strong>
+										<div class="product-tags">
+											<span class="tag">Premium-уровень</span>
+											<span class="tag">Качество</span>
+											<span class="tag">Серьёзный подход</span>
+										</div>
+									</div>
+									<a class="btn btn--dark" href="#">Посмотреть Prime Control</a>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="delivery" class="section section--cream">
+			<div class="wrap">
+				<div class="section__head">
+					<div>
+						<p class="eyebrow">Дискретно и без неловкости</p>
+						<h2>Покупка не должна требовать объяснительную записку</h2>
+					</div>
+					<p class="section__intro">Выбор зависит от цели: приватность, контроль, вариативность или premium-качество.</p>
+				</div>
+
+				<div class="discreet-grid">
+					<article class="discreet-card">
+						<div class="discreet-card__icon">01</div>
+						<h3>Нейтральная упаковка</h3>
+						<p>Без заметной информации о содержимом.</p>
+					</article>
+					<article class="discreet-card">
+						<div class="discreet-card__icon">02</div>
+						<h3>Дискретная доставка</h3>
+						<p>Можно спокойно получить заказ без объяснений.</p>
+					</article>
+					<article class="discreet-card">
+						<div class="discreet-card__icon">03</div>
+						<h3>Понятная информация</h3>
+						<p>Видно, для кого подходит каждый продукт и чем он отличается.</p>
+					</article>
+					<article class="discreet-card">
+						<div class="discreet-card__icon">04</div>
+						<h3>Для разного опыта</h3>
+						<p>Есть варианты для новичков и опытных покупателей.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="faq" class="section section--cream">
+			<div class="wrap">
+				<div class="section__head">
+					<div>
+						<p class="eyebrow">FAQ</p>
+						<h2>Короткие ответы на нормальные вопросы</h2>
+					</div>
+					<p class="section__intro">Неловкость обычно появляется там, где нет ясности. Добавим ясности — и пусть неловкость идёт пить кофе.</p>
+				</div>
+
+				<div class="faq-list" data-accordion-group="faq">
+					<article class="faq-item">
+						<button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-panel-1" id="faq-toggle-1">
+							Можно ли заказать это дискретно?
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-toggle-1">
+							<p>Да. Заказы отправляются в нейтральной упаковке без заметной информации о содержимом.</p>
+						</div>
+					</article>
+
+					<article class="faq-item">
+						<button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-toggle-2">
+							Подходит ли это для первого знакомства с темой?
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-toggle-2">
+							<p>Да. Есть варианты для спокойного старта, если хочется начать без давления и без сложных решений.</p>
+						</div>
+					</article>
+
+					<article class="faq-item">
+						<button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-toggle-3">
+							Как выбрать между продуктами?
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-toggle-3">
+							<p>Ориентируйтесь на цель: больше контроля, максимальная приватность, новые ощущения, регулярная routine или premium-качество.</p>
+						</div>
+					</article>
+
+					<article class="faq-item">
+						<button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-toggle-4">
+							Нужно ли обсуждать это с партнёром?
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-toggle-4">
+							<p>Не обязательно. Но для многих открытый разговор делает отношения спокойнее и ближе.</p>
+						</div>
+					</article>
+
+					<article class="faq-item">
+						<button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-toggle-5">
+							Как использовать это спокойно?
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-toggle-5">
+							<p>Начинать без спешки, читать инструкцию, выбирать комфортный темп и не форсировать ощущения.</p>
+						</div>
+					</article>
+
+					<article class="faq-item">
+						<button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-panel-6" id="faq-toggle-6">
+							Как ухаживать за продуктом?
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-toggle-6">
+							<p>Очищать после использования и хранить аккуратно по инструкции.</p>
+						</div>
+					</article>
+
+					<article class="faq-item">
+						<button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-panel-7" id="faq-toggle-7">
+							Что делать, если я сомневаюсь между двумя вариантами?
+							<span class="chevron" aria-hidden="true">⌄</span>
+						</button>
+						<div class="faq-panel" id="faq-panel-7" role="region" aria-labelledby="faq-toggle-7">
+							<p>Выбирайте не “лучший продукт вообще”, а тот, который лучше подходит под вашу главную цель.</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="footer-cta">
+			<div class="wrap">
+				<div class="cta-card">
+					<div>
+						<p class="eyebrow">Aloha Club</p>
+						<h2>Выберите вариант под свою цель — спокойно, приватно и без давления</h2>
+						<p>Кто-то ищет максимальную приватность. Кто-то — больше контроля. Кто-то хочет добавить вариативность. А кто-то готов выбрать premium-продукт для личной routine.</p>
+						<div class="age-note">Материал предназначен для совершеннолетней аудитории. Не является медицинской рекомендацией.</div>
+					</div>
+					<a class="btn btn--primary" href="#products">Смотреть решения</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script>
+		(function () {
+			'use strict';
+
+			function togglePanel(button) {
+				var panelId = button.getAttribute('aria-controls');
+				var panel = document.getElementById(panelId);
+
+				if (!panel) {
+					return;
+				}
+
+				var isOpen = button.getAttribute('aria-expanded') === 'true';
+				button.setAttribute('aria-expanded', String(!isOpen));
+				panel.classList.toggle('is-open', !isOpen);
+			}
+
+			var toggles = document.querySelectorAll('.product-toggle, .faq-toggle');
+
+			toggles.forEach(function (button) {
+				button.addEventListener('click', function () {
+					togglePanel(button);
+				});
+			});
+
+			document.addEventListener('keydown', function (event) {
+				if (event.key !== 'Escape') {
+					return;
+				}
+
+				toggles.forEach(function (button) {
+					var panel = document.getElementById(button.getAttribute('aria-controls'));
+					if (!panel || !panel.classList.contains('is-open')) {
+						return;
+					}
+
+					button.setAttribute('aria-expanded', 'false');
+					panel.classList.remove('is-open');
+				});
+			});
+		})();
+	</script>
+</body>
+</html>

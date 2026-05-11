@@ -1,4 +1,3 @@
-
 const pix = {
 	aloha: '1935071070694393',
 	quiz: '2664730533928587',
@@ -234,7 +233,7 @@ if (document.querySelector('#quiz-app')) {
 		const banner = document.getElementById('cookie-banner');
 
 		if (!consent) {
-			banner.style.display = 'block';
+			banner.style.display = 'flex';
 		} else if (consent === 'granted') {
 			try {
 				pixelInit();

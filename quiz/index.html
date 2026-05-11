@@ -123,54 +123,12 @@
 		<div id="sections-container"></div>
 	</div>
 
-
-
-	<div id="age-gate">
-		<div class="screen">
-			<h2>Deze quiz is bedoeld voor volwassenen.</h2>
-			<button id="age-gate-confirm" class="btn btn-primary">Ja, ik ben meerderjarig</button>
-			<a href="https://www.facebook.com/" class="decline-link">Nee, verlaat deze pagina</a>
-			<div class="quiz-legal-footer">
-				Door toegang te krijgen tot deze site ga je akkoord met onze algemene voorwaarden en bevestig je dat je conform de wetgeving in jouw regio gerechtigd bent om deze inhoud te bekijken.
-			</div>
-		</div>
-	</div>
-
-	<script>
-		(function () {
-			const gate = document.getElementById('age-gate');
-
-			if (sessionStorage.getItem('age-verified') === '1') {
-				gate.remove();
-				return;
-			}
-
-			document.body.style.overflow = 'hidden';
-
-			document.getElementById('age-gate-confirm').addEventListener('mouseenter', function () {
-				this.style.background = 'var(--gold)';
-				this.style.color = 'var(--bg)';
-			});
-			document.getElementById('age-gate-confirm').addEventListener('mouseleave', function () {
-				this.style.background = 'transparent';
-				this.style.color = 'var(--gold)';
-			});
-
-			document.getElementById('age-gate-confirm').addEventListener('click', function () {
-				sessionStorage.setItem('age-verified', '1');
-				document.body.style.overflow = '';
-				gate.style.transition = 'opacity .3s';
-				gate.style.opacity = '0';
-				setTimeout(() => gate.remove(), 300);
-			});
-		})();
-	</script>
-
-	<div id="cookie-banner" class="cookie-banner" style="display: none;">
-		<p>Wij gebruiken cookies om je ervaring te verbeteren en onze diensten te analyseren. Ga je akkoord?</p>
-		<div class="cookie-buttons">
-			<button onclick="acceptCookies()" class="btn-cookie accept">Akkoord</button>
-			<button onclick="declineCookies()" class="btn-cookie decline">Weigeren</button>
+	<div id="cookie-banner" class="cookie-container" style="display:none">
+		<div class="cookie-banner">
+			<p><strong>Bevestig je leeftijd</strong></p>
+			<p>Deze website bevat inhoud die uitsluitend bestemd is voor <strong>volwassenen</strong>. Om toegang te krijgen, moet je bevestigen dat je wettelijk meerderjarig bent. Daarnaast gebruiken we cookies om je ervaring te optimaliseren.</p>
+			<div class="cookie-buttons"><button onclick="acceptCookies()" class="btn-cookie accept">Ja, ik ben meerderjarig</button> <a href="https://www.facebook.com" class="link-decline btn-cookie decline">Nee, verlaat pagina</a></div>
+			<div class="legal-disclaimer">Door op 'Ja' te klikken, verklaar je dat je de wettelijke leeftijd hebt bereikt om deze inhoud te bekijken en ga je akkoord met ons <a href="/privacy-policy.html" target="_blank">privacy-</a> en <a href="/cookie-policy.html" target="_blank">cookiebeleid</a>.</div>
 		</div>
 	</div>
 
