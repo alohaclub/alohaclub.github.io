@@ -1,4 +1,4 @@
-const nextLinks = document.querySelectorAll('a');
+const nextLinks = document.querySelectorAll('a.btn');
 const to = {
 	/*
 
@@ -25,7 +25,7 @@ const to = {
 	'scorpion': 'https://www.alohaclub.nl/cart/52961265484112:1?storefront=true',
 	'undrw': 'https://www.alohaclub.nl/cart/52166721667408:1?storefront=true',
 	// 10441039544656
-	'aloha-control-x': 'https://www.alohaclub.nl/products/aloha-control-x',
+	'aloha-control': 'https://www.alohaclub.nl/products/aloha-control-x',
 }
 const params = new URLSearchParams(window.location.search);
 const q = params.get('q');
