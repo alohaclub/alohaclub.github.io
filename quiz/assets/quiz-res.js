@@ -1,4 +1,5 @@
 const baseUrl = "https://www.alohaclub.nl/collections/intieme-wellness/";
+const cfWorker = 'https://sweet-mouse-24b9.time2out.workers.dev/';
 
 const legalFooterHtml = `
 <footer class="quiz-legal-footer">
@@ -123,6 +124,30 @@ function checkCookieConsent() {
 		// } catch(e) {
 		// 	console.log(e);
 		// }
+
+
+		(function () {
+			const quizResults = sessionStorage.getItem('quiz_results') ?? '';
+
+			const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+			const params = new URLSearchParams(window.location.search);
+			const utmString = utmKeys
+			.filter(key => params.has(key))
+			.map(key => `${key}=${encodeURIComponent(params.get(key))}`)
+			.join('&');
+
+			const data = JSON.stringify({
+				quiz_results: quizResults,
+				utm: utmString,
+			});
+			const blob = new Blob([data], { type: 'application/json' });
+
+			const status = navigator.sendBeacon(cfWorker, blob);
+
+			if (!status) {
+				console.error('Beacon failed to queue');
+			}
+		})();
 	}
 }
 checkCookieConsent();
