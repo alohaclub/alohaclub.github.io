@@ -176,7 +176,7 @@ if (localStorage.getItem('ses') && !isShowCapcha()) {
 	}
 } else if (isShowCapcha()) {
 	document.querySelector('#turnstile-container').style.display = 'flex';
-	await lsrc('https://challenges.cloudflare.com/turnstile/v0/api.js');
+	lsrc('https://challenges.cloudflare.com/turnstile/v0/api.js');
 
 	turnstile.render('#turnstile-container', {
 		sitekey: '0x4AAAAAADN33-XxYLv9o8zP',
