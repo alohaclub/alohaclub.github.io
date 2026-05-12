@@ -175,18 +175,18 @@ if (localStorage.getItem('ses') && !isShowCapcha()) {
 		console.log(e);
 	}
 } else if (isShowCapcha()) {
-	document.querySelector('#turnstile-container').style.display = 'flex';
-	lsrc('https://challenges.cloudflare.com/turnstile/v0/api.js');
-
-	turnstile.render('#turnstile-container', {
-		sitekey: '0x4AAAAAADN33-XxYLv9o8zP',
-		callback: function(token) {
-			console.log('Captcha passed, token:', token);
-			lsrc('/assets/gate.js').then(() => {})
-			.catch(err => {
-				console.error(err.message);
-			});
-			document.querySelector('#turnstile-container').style.display = 'none';
-		},
-	});
+	(async () => {
+		document.querySelector('#turnstile-container').style.display = 'flex';
+		await lsrc('https://challenges.cloudflare.com/turnstile/v0/api.js');
+		turnstile.render('#turnstile-container', {
+			sitekey: '0x4AAAAAADN33-XxYLv9o8zP',
+			callback: function(token) {
+				console.log('Captcha passed, token:', token);
+				lsrc('/assets/gate.js')
+				.then(() => {})
+				.catch(err => console.error(err.message));
+				document.querySelector('#turnstile-container').style.display = 'none';
+			},
+		});
+	})();
 }
