@@ -166,14 +166,16 @@ function isShowCapcha() {
 
 
 if (localStorage.getItem('ses') && !isShowCapcha()) {
-	try {
-		lsrc('/assets/gate.js').then(() => {})
-		.catch(err => {
-			console.error(err.message);
-		});
-	} catch(e) {
-		console.log(e);
-	}
+	(async () => {
+		try {
+			lsrc('/assets/gate.js').then(() => {})
+			.catch(err => {
+				console.error(err.message);
+			});
+		} catch(e) {
+			console.log(e);
+		}
+	})();
 } else if (isShowCapcha()) {
 	(async () => {
 		document.querySelector('#turnstile-container').style.display = 'flex';
