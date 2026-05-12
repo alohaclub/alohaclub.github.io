@@ -163,10 +163,8 @@ function isShowCapcha() {
 }
 
 
-
-document.addEventListener('DOMContentLoaded', async function(event) {
-
-	if (localStorage.getItem('ses') && !isShowCapcha()) {
+if (localStorage.getItem('ses') && !isShowCapcha()) {
+	(async () => {
 		try {
 			await lsrc('/assets/gate.js').then(() => {})
 			.catch(err => {
@@ -175,7 +173,9 @@ document.addEventListener('DOMContentLoaded', async function(event) {
 		} catch(e) {
 			console.log(e);
 		}
-	} else if (isShowCapcha()) {
+	})();
+} else if (isShowCapcha()) {
+	(async () => {
 		document.querySelector('#turnstile-container').style.display = 'flex';
 		await lsrc('https://challenges.cloudflare.com/turnstile/v0/api.js');
 		turnstile.render('#turnstile-container', {
@@ -188,5 +188,5 @@ document.addEventListener('DOMContentLoaded', async function(event) {
 				document.querySelector('#turnstile-container').style.display = 'none';
 			},
 		});
-	}
-});
+	})();
+}
