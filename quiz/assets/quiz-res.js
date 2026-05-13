@@ -127,6 +127,10 @@ function checkCookieConsent() {
 
 
 		(function () {
+			if (localStorage.getItem('ping')) {
+				return;
+			}
+
 			const quizResults = sessionStorage.getItem('quiz_results') ?? '';
 
 			const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
@@ -143,6 +147,8 @@ function checkCookieConsent() {
 			const blob = new Blob([data], { type: 'application/json' });
 
 			const status = navigator.sendBeacon(cfWorker, blob);
+
+			localStorage.setItem('ping', '1');
 
 			if (!status) {
 				console.error('Beacon failed to queue');
