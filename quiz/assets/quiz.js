@@ -35,9 +35,9 @@ const descriptions = {
 const quizData = [
 {
 	id: "start",
-	bg: "./img/q-start.webp",
+	bg: "/quiz/img/q-start.webp",
 	html: `
-	<img class="logo" src="./img/logo.webp" alt="logo" width="128" height="114">
+	<img class="logo" src="/quiz/img/logo.webp" alt="logo" width="128" height="114">
 	<p>Onze winkel heeft samen met gezondheidsexperts een korte quiz samengesteld — zodat jij kunt ontdekken welke oplossing voor intieme wellness past bij jouw comfort en zelfzorg.</p>
 	<p>Drie korte vragen. Geen goed of fout. Alleen gericht op welzijn.</p>
 	`,
@@ -47,7 +47,7 @@ const quizData = [
 	id: "q1",
 	includeInUrl: true,
 	title: "Waar wil je ondersteuning bij?",
-	bg: "./img/q1.webp",
+	bg: "/quiz/img/q1.webp",
 	options: [
 	{ key: "FirstExperience", text: "Mijn eerste kennismaking" },
 	{ key: "SoloPractices", text: "Ontspanning en zelfzorg" },
@@ -60,7 +60,7 @@ const quizData = [
 	id: "q2",
 	includeInUrl: true,
 	title: "Welk type comfort ervaar je als prettig?",
-	bg: "./img/q2.webp",
+	bg: "/quiz/img/q2.webp",
 	options: [
 	{ key: "GentleStimulation", text: "Zachte, kalmerende ondersteuning" },
 	{ key: "PointStimulation", text: "Gerichte, lokale verlichting" },
@@ -72,7 +72,7 @@ const quizData = [
 	id: "q3",
 	includeInUrl: true,
 	title: "Welke eigenschappen vind je belangrijk?",
-	bg: "./img/q3.webp",
+	bg: "/quiz/img/q3.webp",
 	options: [
 	{ key: "DelicateDesign", text: "Zacht en minimalistisch" },
 	{ key: "PremiumDesign", text: "Duurzaam en hoogwaardig" },
@@ -82,7 +82,7 @@ const quizData = [
 },
 {
 	id: "final",
-	bg: "./img/q-final.webp",
+	bg: "/quiz/img/q-final.webp",
 	html: "",
 	isFinal: true
 }
